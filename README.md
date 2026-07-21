@@ -206,4 +206,4 @@ MIT License — free to use, modify, and distribute.
 - Star the repository to follow progress.
 - Watch for new releases and features.
 
-Project Sentinel — because your identity should belong to you.
+Project Sentinel, because your identity should belong to you.
