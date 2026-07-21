@@ -123,21 +123,16 @@ pip install -r requirements.txt
 
 ### Run the prototype
 
-Open **3 terminals** and run:
+Open **2 terminals** and run:
 
 ```bash
 # Terminal 1
-python issuer.py
+python main.py
 ```
 
 ```bash
 # Terminal 2
 python website.py
-```
-
-```bash
-# Terminal 3
-python wallet.py
 ```
 
 ### Test the flow
