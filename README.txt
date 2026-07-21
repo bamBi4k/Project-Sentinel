@@ -1,5 +1,5 @@
 Project Sentinel
-A decentralized identity handshake system - proving who you are without revealing yourself
+A decentralized identity handshake system, proving who you are without revealing yourself
 
 What is Project Sentinel?
 Project Sentinel is a privacy-first digital identity prototype that allows users to prove facts about themselves (like "I am over 18") without revealing personal information like their name, birth date, or ID number.
@@ -7,7 +7,7 @@ Project Sentinel is a privacy-first digital identity prototype that allows users
 Think of it as a digital ID card that only shows what's absolutely necessary - nothing more.
 
 System Architecture
-https://github.com/bamBi4k/Project-Sentinel/blob/main/Data%2520Flow%2520Diagram.png?raw=true
+![System Architecture](https://github.com/bamBi4k/Project-Sentinel/blob/ed7d9a86ced18bfbc2c07a605a908ed51555154b/Data%20Flow%20Diagram.png)
 
 Figure 1: Complete identity verification flow from issuance to access
 
