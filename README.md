@@ -1,6 +1,6 @@
 # Project Sentinel
 
-**Prove who you are — without revealing who you are.**
+**Prove who you are, without revealing who you are.**
 
 Project Sentinel is a privacy-first identity system that lets you prove simple facts about yourself, like **“I am over 18”**, without sharing sensitive details such as your name, birth date, or ID number.
 
