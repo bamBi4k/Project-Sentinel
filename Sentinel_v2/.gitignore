@@ -1,42 +1,51 @@
 # ==========================================
-# PROJECT SENTINEL - .gitignore
+# PROJECT SENTINEL V2 - .gitignore
 # ==========================================
 
 # ------------------------------------------
 # 1. SENSITIVE DATA (CRITICAL)
 # ------------------------------------------
 
-# Sentinel v1 - Keys and credentials
-keys/
-credentials/
-wallet_storage/
-*.key
-*.pem
-*.priv
-*.secret
-
-# Sentinel v2 - Storage directories
-Sentinel_v2/storage/
-Sentinel_v2/storage/**
-!Sentinel_v2/storage/.gitkeep
+# Sentinel v2 - Storage directories (keys, credentials, wallet data)
+sentinel_v2/storage/
+sentinel_v2/storage/**
+!sentinel_v2/storage/.gitkeep
 
 # Any key files anywhere
 *.key
 *.pem
 *.priv
 *.secret
+*.jwk
+*.jks
+*.p12
+*.pfx
+*.keystore
+*.truststore
 *_private.*
+signing_key.*
+
+# Credential files
+*.credential
+*.cred
+credential.json
+credentials.json
+*.vcred
 
 # ------------------------------------------
 # 2. PYTHON CACHE & COMPILED FILES
 # ------------------------------------------
 
+# Python bytecode
 __pycache__/
 *.pyc
 *.pyo
 *.pyd
 *.pyz
 *.pyzip
+
+# Python cache directories
+.Python
 *.so
 *.egg
 *.egg-info/
@@ -57,6 +66,7 @@ ENV/
 # 3. IDE & OS FILES
 # ------------------------------------------
 
+# IDE directories
 .vscode/
 .idea/
 *.swp
@@ -81,6 +91,7 @@ logs/
 # 5. FLASK & WEB FILES
 # ------------------------------------------
 
+# Flask instance folder
 instance/
 *.sqlite
 *.db
@@ -97,7 +108,21 @@ config.local.py
 config.json
 
 # ------------------------------------------
-# 7. TEST & COVERAGE
+# 7. PROJECT SENTINEL V2 SPECIFIC
+# ------------------------------------------
+
+# Storage directories (explicitly ignored)
+sentinel_v2/storage/
+sentinel_v2/*/__pycache__/
+sentinel_v2/**/__pycache__/
+
+# Keep the .gitkeep files to maintain directory structure
+!sentinel_v2/storage/.gitkeep
+!sentinel_v2/storage/authority/.gitkeep
+!sentinel_v2/storage/wallet/.gitkeep
+
+# ------------------------------------------
+# 8. TEST & COVERAGE
 # ------------------------------------------
 
 .pytest_cache/
@@ -108,18 +133,11 @@ htmlcov/
 .ruff_cache/
 
 # ------------------------------------------
-# 8. BACKUP & TEMPORARY FILES
+# 9. DEPLOYMENT & PACKAGING
 # ------------------------------------------
 
-*.BACKUP*
-*.bak
-*.backup
-*.old
-*.orig
-*~
-*.tmp
-*.temp
-fix_*.py
-run.py
-test_*.py
-*_test.py
+*.whl
+*.tar.gz
+*.tgz
+*.zip
+*.tar
