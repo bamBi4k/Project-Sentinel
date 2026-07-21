@@ -147,8 +147,8 @@ It is inspired by the same general ideas behind:
 
 ### Requirements
 
-- Python 3.8 or higher
-- Git
+- Python 3.8 or higher.
+- Git.
 
 ### Setup
 
@@ -158,27 +158,21 @@ cd Project-Sentinel
 pip install -r requirements.txt
 ```
 
-### Run Version 1
+### Run Version 2
 
-Open **2 terminals** and run:
-
-```bash
-# Terminal 1
-python main.py
-```
+Open a terminal in Sentinel_v2\ and run:
 
 ```bash
-# Terminal 2
-python website.py
+python app.py
 ```
 
 ### Test the flow
 
-1. Open your browser to [http://127.0.0.1:5000](http://127.0.0.1:5000)
-2. Click **Verify Identity**
-3. Let the wallet generate a proof
-4. The website verifies it
-5. Access is granted
+1. Open your browser and go to [http://127.0.0.1:5000](http://127.0.0.1:5000).
+2. Click **Setup Demo**.
+3. Enter your birth year.
+4. Click **Verify Identity**.
+5. Wait for the redirect if the proof shows you are 18+.
 
 ## Privacy promises
 
