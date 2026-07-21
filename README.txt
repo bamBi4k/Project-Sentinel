@@ -1,189 +1,209 @@
-Project Sentinel
-A decentralized identity handshake system, proving who you are without revealing yourself
+# Project Sentinel
 
-What is Project Sentinel?
-Project Sentinel is a privacy-first digital identity prototype that allows users to prove facts about themselves (like "I am over 18") without revealing personal information like their name, birth date, or ID number.
+**Prove who you are — without revealing who you are.**
 
-Think of it as a digital ID card that only shows what's absolutely necessary - nothing more.
+Project Sentinel is a privacy-first identity system that lets you prove simple facts about yourself, like **“I am over 18”**, without sharing sensitive details such as your name, birth date, or ID number.
 
-System Architecture
+---
+
+## What is Project Sentinel?
+
+Project Sentinel is a digital identity prototype built around privacy.
+
+Instead of showing everything about you, it only shares the minimum information needed for access.  
+Think of it like a digital ID card that hides everything except the one fact a website actually needs.
+
+---
+
+## Why it matters
+
+Today, many websites ask for more personal data than they really need.
+
+Project Sentinel is designed to change that by helping people:
+
+- Keep personal details private.
+- Control their own identity data.
+- Verify information without exposing the underlying data.
+- Avoid accounts, passwords, and unnecessary tracking.
+
+---
+
+## How it works
+
 ![System Architecture](https://github.com/bamBi4k/Project-Sentinel/blob/ed7d9a86ced18bfbc2c07a605a908ed51555154b/Data%20Flow%20Diagram.png)
 
-Figure 1: Complete identity verification flow from issuance to access
+**Figure 1:** Complete identity verification flow from issuance to access.
 
-The Flow Explained:
-Sentinel Authority generates cryptographic keys and issues signed credentials
+### Simple flow
 
-User Wallet stores credentials securely on the user's device
+1. **Sentinel Authority** creates cryptographic keys and issues a signed credential.
+2. **Your wallet** stores the credential securely on your device.
+3. **A website** asks you to verify something.
+4. **Your wallet** signs a challenge without revealing personal data.
+5. **The website** checks the proof and grants access.
 
-Website requests verification and sends a cryptographic challenge
+---
 
-Wallet signs the challenge using the credential (without revealing the actual data)
+## Key features
 
-Website verifies the signature and grants access
+| Feature | What it means |
+|---|---|
+| Trusted issuer | An authority signs and issues verifiable credentials. |
+| User-controlled wallet | Credentials stay on your device, not on a company server. |
+| Cryptographic signatures | Helps protect credentials from tampering. |
+| Credential verification | Confirms facts without exposing private details. |
+| Challenge-response login | Uses a fresh challenge each time to prevent replay attacks. |
+| Replay protection | Each verification is unique and cannot be reused. |
+| No database | No central storage of user profiles or personal records. |
+| No user accounts | No sign-up forms, passwords, or traditional login system. |
 
-Features
-Status	Feature	Description
-✅	Trusted Issuer	Authority that signs and issues verifiable credentials
-✅	User-Controlled Wallet	Credentials stored locally - user is in full control
-✅	Cryptographic Signatures	Ed25519 signing and verification for tamper-proof credentials
-✅	Credential Verification	Verify authenticity without exposing underlying data
-✅	Challenge-Response Auth	Prevents replay attacks with unique challenges per session
-✅	Replay Protection	Each verification uses a unique nonce
-✅	No Database	Zero data storage - no user profiles or tracking
-✅	No User Accounts	No registration, no passwords, no login system
-What It Is Today (Prototype)
-This is a functional prototype that demonstrates:
+---
 
-Complete identity handshake flow from issuer to website
+## What it is today
 
-Cryptographic verification without sharing personal data
+This is a working prototype that demonstrates:
 
-A working foundation for decentralized identity systems
+- A complete identity handshake from issuer to website.
+- Privacy-preserving verification.
+- A foundation for decentralized identity systems.
 
-This is the basic skeleton behind industry standards like:
+It is inspired by the same general ideas behind:
 
-Verifiable Credentials (VC)
+- Verifiable Credentials.
+- OpenID4VC.
+- eIDAS 2.0 digital wallet concepts.
 
-OpenID4VC
+---
 
-eIDAS 2.0 Wallets (EU Digital Identity Framework)
+## What comes next
 
-Future Vision (What It Will Become)
-Phase 4.5: Privacy Hardening (In Progress)
-Remove birth year and user identifier leakage
+### Phase 4.5: Privacy hardening
+- Reduce leakage of birth year and user identifiers.
+- Make the website receive only the exact proof it needs.
 
-Website receives only "age_over_18": true and cryptographic proof
+### Phase 5: Selective disclosure
+- Choose exactly what to reveal.
+- Example: prove “I am over 18” without showing your birth year.
+- Example: prove “I am a citizen” without revealing your passport number.
 
-Phase 5: Selective Disclosure
-Users choose exactly what attributes to reveal
+### Phase 6: Zero-knowledge proofs
+- Replace signature checks with zero-knowledge proofs.
+- Prove facts mathematically without revealing the underlying data.
+- Possible technologies: Groth16, PLONK, or Bulletproofs.
 
-Prove "I am over 18" without revealing birth year
+---
 
-Prove "I am a citizen" without revealing name or passport number
+## Current status
 
-Phase 6: Zero-Knowledge Proofs (ZKP)
-Replace signature verification with zero-knowledge proofs
+| Phase | Status |
+|---|---|
+| Phase 1: Basic structure | Complete |
+| Phase 2: Identity issuance | Complete |
+| Phase 3: Wallet implementation | Complete |
+| Phase 4: Verification flow | Complete |
+| Phase 4.5: Privacy hardening | In progress |
+| Phase 5: Selective disclosure | Planned |
+| Phase 6: Zero-knowledge proofs | Planned |
 
-Prove facts mathematically without revealing ANY underlying data
+---
 
-Using Groth16, PLONK, or Bulletproofs
+## How to try it
 
-Production Vision
-Full decentralized identity wallet for mobile and browser
+### Requirements
+- Python 3.8 or higher
+- Git
 
-Web3 integration with blockchain-based verification
+### Setup
 
-Enterprise-grade privacy compliant with GDPR and data protection laws
-
-Cross-platform support (mobile, desktop, browser extension)
-
-How to Use (Current Prototype)
-Prerequisites
-Python 3.8 or higher
-
-Git
-
-Quick Setup
-bash
-# 1. Clone the repository
+```bash
 git clone https://github.com/bamBi4k/Project-Sentinel.git
 cd Project-Sentinel
-
-# 2. Install dependencies
 pip install -r requirements.txt
+```
 
-# 3. Run the system (3 terminals needed)
-# Terminal 1 - Start the issuer
+### Run the prototype
+
+Open **3 terminals** and run:
+
+```bash
+# Terminal 1
 python issuer.py
+```
 
-# Terminal 2 - Start the website
+```bash
+# Terminal 2
 python website.py
+```
 
-# Terminal 3 - Run the wallet
+```bash
+# Terminal 3
 python wallet.py
-Testing the Flow
-Open your browser to http://127.0.0.1:5000
+```
 
-Click "Verify Identity" on the website
+### Test the flow
 
-Wallet generates a proof using your credential
+1. Open your browser to http://127.0.0.1:5000
+2. Click **Verify Identity**
+3. Let the wallet generate a proof
+4. The website verifies it
+5. Access is granted
 
-Website verifies the proof
+---
 
-Access granted - you're verified!
+## Project structure
 
-Project Structure
-text
+```text
 Project-Sentinel/
-├── issuer.py          # Authority that signs credentials
-├── wallet.py          # User wallet storing credentials
-├── website.py         # Demo website requesting verification
-├── verifier.py        # Cryptographic verification logic
+├── issuer.py          # Issues signed credentials
+├── wallet.py          # Stores credentials locally
+├── website.py         # Demo website asking for verification
+├── verifier.py        # Verification logic
 ├── crypto_utils.py    # Key generation and crypto helpers
 ├── main.py            # Combined demo script
 ├── requirements.txt   # Python dependencies
-└── templates/         # Web interface templates
+└── templates/
     ├── index.html     # Main verification page
     └── success.html   # Access granted page
-Privacy Guarantees
+```
+
+---
+
+## Privacy promises
+
 Your data stays on your device:
 
-✅ Private keys are never transmitted
+- Private keys are never sent anywhere.
+- Credentials are stored locally.
+- Proofs are generated on-device.
+- Websites receive only the information they need.
+- There is no central database to breach.
 
-✅ Credentials are stored locally
+---
 
-✅ Proofs are generated on-device
+## Contributing
 
-✅ Websites receive only what's necessary
+This is an open-source project focused on privacy-preserving digital identity.
 
-✅ No central database = no data breaches
+Help is especially welcome in these areas:
 
-Current Status
-Phase	Status
-Phase 1: Basic Structure	✅ Complete
-Phase 2: Identity Issuance	✅ Complete
-Phase 3: Wallet Implementation	✅ Complete
-Phase 4: Verification Flow	✅ Complete
-Phase 4.5: Privacy Hardening	🔄 In Progress
-Phase 5: Selective Disclosure	📋 Planned
-Phase 6: Zero-Knowledge Proofs	📋 Planned
-Contributing
-This is an open-source project focused on privacy-preserving digital identity. Contributions welcome!
+- Mobile wallet development.
+- QR code and NFC integration.
+- Zero-knowledge proof implementation.
+- UI/UX improvements.
+- Browser extension development.
 
-Areas needing help:
+---
 
-Mobile wallet development
+## License
 
-QR code / NFC integration
+MIT License — free to use, modify, and distribute.
 
-Zero-knowledge proof implementation
+---
 
-UI/UX improvements
+## Questions?
 
-Browser extension development
+- Open an issue on GitHub.
+- Star the repository to follow progress.
+- Watch for new releases and features.
 
-License
-MIT License - Free to use, modify, and distribute.
-
-Questions?
-Open an issue on GitHub
-
-Star the repository to follow development
-
-Watch for new releases and features
-
-Project Sentinel - Because your identity should belong to you.
-
-Quick Start Commands
-bash
-# If you want to try it right now:
-
-# 1. Start the website
-python website.py
-
-# 2. In another terminal, run the demo
-python main.py
-
-# 3. Open browser to http://127.0.0.1:5000
-This response is AI-generated, for reference only.
+**Project Sentinel — because your identity should belong to you.**
