@@ -7,7 +7,7 @@ Project Sentinel is a privacy-first digital identity prototype that allows users
 Think of it as a digital ID card that only shows what's absolutely necessary - nothing more.
 
 System Architecture
-https://Data%2520Flow%2520Diagram.png
+https://github.com/bamBi4k/Project-Sentinel/blob/main/Data%2520Flow%2520Diagram.png?raw=true
 
 Figure 1: Complete identity verification flow from issuance to access
 
@@ -24,14 +24,14 @@ Website verifies the signature and grants access
 
 Features
 Status	Feature	Description
-Yes	Trusted Issuer	Authority that signs and issues verifiable credentials
-Yes	User-Controlled Wallet	Credentials stored locally - user is in full control
-Yes	Cryptographic Signatures	Ed25519 signing and verification for tamper-proof credentials
-Yes	Credential Verification	Verify authenticity without exposing underlying data
-Yes	Challenge-Response Auth	Prevents replay attacks with unique challenges per session
-Yes	Replay Protection	Each verification uses a unique nonce
-Yes	No Database	Zero data storage - no user profiles or tracking
-Yes	No User Accounts	No registration, no passwords, no login system
+✅	Trusted Issuer	Authority that signs and issues verifiable credentials
+✅	User-Controlled Wallet	Credentials stored locally - user is in full control
+✅	Cryptographic Signatures	Ed25519 signing and verification for tamper-proof credentials
+✅	Credential Verification	Verify authenticity without exposing underlying data
+✅	Challenge-Response Auth	Prevents replay attacks with unique challenges per session
+✅	Replay Protection	Each verification uses a unique nonce
+✅	No Database	Zero data storage - no user profiles or tracking
+✅	No User Accounts	No registration, no passwords, no login system
 What It Is Today (Prototype)
 This is a functional prototype that demonstrates:
 
@@ -53,7 +53,7 @@ Future Vision (What It Will Become)
 Phase 4.5: Privacy Hardening (In Progress)
 Remove birth year and user identifier leakage
 
-Website receives only "age_over_18: true" and cryptographic proof
+Website receives only "age_over_18": true and cryptographic proof
 
 Phase 5: Selective Disclosure
 Users choose exactly what attributes to reveal
@@ -85,7 +85,7 @@ Python 3.8 or higher
 Git
 
 Quick Setup
-text
+bash
 # 1. Clone the repository
 git clone https://github.com/bamBi4k/Project-Sentinel.git
 cd Project-Sentinel
@@ -129,25 +129,25 @@ Project-Sentinel/
 Privacy Guarantees
 Your data stays on your device:
 
-Private keys are never transmitted
+✅ Private keys are never transmitted
 
-Credentials are stored locally
+✅ Credentials are stored locally
 
-Proofs are generated on-device
+✅ Proofs are generated on-device
 
-Websites receive only what's necessary
+✅ Websites receive only what's necessary
 
-No central database = no data breaches
+✅ No central database = no data breaches
 
 Current Status
-text
-Phase 1: Basic Structure           Complete
-Phase 2: Identity Issuance         Complete
-Phase 3: Wallet Implementation     Complete
-Phase 4: Verification Flow         Complete
-Phase 4.5: Privacy Hardening       In Progress
-Phase 5: Selective Disclosure      Planned
-Phase 6: Zero-Knowledge Proofs     Planned
+Phase	Status
+Phase 1: Basic Structure	✅ Complete
+Phase 2: Identity Issuance	✅ Complete
+Phase 3: Wallet Implementation	✅ Complete
+Phase 4: Verification Flow	✅ Complete
+Phase 4.5: Privacy Hardening	🔄 In Progress
+Phase 5: Selective Disclosure	📋 Planned
+Phase 6: Zero-Knowledge Proofs	📋 Planned
 Contributing
 This is an open-source project focused on privacy-preserving digital identity. Contributions welcome!
 
@@ -176,7 +176,7 @@ Watch for new releases and features
 Project Sentinel - Because your identity should belong to you.
 
 Quick Start Commands
-text
+bash
 # If you want to try it right now:
 
 # 1. Start the website
@@ -186,3 +186,4 @@ python website.py
 python main.py
 
 # 3. Open browser to http://127.0.0.1:5000
+This response is AI-generated, for reference only.
