@@ -1,6 +1,6 @@
 # Project Sentinel
 
-**Prove who you are — without revealing who you are.**
+**Prove who you are, without revealing who you are.**
 
 Project Sentinel is a privacy-first identity system that lets you prove simple facts about yourself, like **“I am over 18”**, without sharing sensitive details such as your name, birth date, or ID number.
 
@@ -123,21 +123,16 @@ pip install -r requirements.txt
 
 ### Run the prototype
 
-Open **3 terminals** and run:
+Open **2 terminals** and run:
 
 ```bash
 # Terminal 1
-python issuer.py
+python main.py
 ```
 
 ```bash
 # Terminal 2
 python website.py
-```
-
-```bash
-# Terminal 3
-python wallet.py
 ```
 
 ### Test the flow
